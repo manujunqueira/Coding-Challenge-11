@@ -14,10 +14,24 @@ function updateTotalPrice() {
     const totalPrice = productPrice * quantity; // Calculate total price
     
     // Update the total price in the UI
-    totalPriceElement.textContent = totalPrice.toFixed(2);
+    totalPriceElement.textContent = totalPrice.toFixed(2); // // Ensure it shows 2 decimals
 }
 
 // Event listeners for product selection and quantity input changes
 productSelector.addEventListener('change', updateTotalPrice);
 quantityInput.addEventListener('input', updateTotalPrice);
 
+// Task 4 - Handle Order Submission
+
+const placeOrderButton = document.getElementById('place-order');
+const orderSummary = document.getElementById('order-summary');
+
+// Handle order submission
+placeOrderButton.addEventListener('click', function() {
+    const selectedProduct = productSelector.options[productSelector.selectedIndex].text; // Get selected product text
+    const quantity = quantityInput.value; // Get quantity entered
+    const totalPrice = totalPriceElement.textContent; // Get calculated total price
+    
+    // Display order summary
+    orderSummary.textContent = `You ordered ${quantity} of ${selectedProduct}. Your total price is: $${totalPrice}`;
+});
