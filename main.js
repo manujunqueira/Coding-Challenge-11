@@ -28,9 +28,9 @@ const orderSummary = document.getElementById('order-summary');
 
 // Handle order submission
 placeOrderButton.addEventListener('click', function() {
-    const selectedProduct = productSelector.options[productSelector.selectedIndex].text; // Get selected product text
-    const quantity = quantityInput.value; // Get quantity entered
-    const totalPrice = totalPriceElement.textContent; // Get calculated total price
+    const selectedProduct = productSelector.options[productSelector.selectedIndex].text; // enter selected product text
+    const quantity = quantityInput.value; // enter quantity 
+    const totalPrice = totalPriceElement.textContent; // get total price calculated
     
     // Display order summary
     orderSummary.textContent = `You ordered ${quantity} of ${selectedProduct}. Your total price is: $${totalPrice}`;
